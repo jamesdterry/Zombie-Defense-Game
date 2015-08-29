@@ -12,8 +12,17 @@ class Sprite:
     x = 0
     y = 0
 
-    def __init__(self, filename):
-        self.bitmap = pygame.image.load(filename)
+    @classmethod
+    def fromfile(cls, filename):
+        sprite = cls()
+        sprite.bitmap = pygame.image.load(filename)
+        return sprite
+
+    @classmethod
+    def clone(cls, base_sprite, size):
+        sprite = cls()
+        sprite.bitmap = pygame.transform.scale(base_sprite.bitmap, size)
+        return sprite
 
     def blit(self, s):
         s.screen.blit(self.bitmap, (self.x, self.y))
@@ -42,3 +51,6 @@ class Sprite:
         other_rect = other_sprite.rect()
         return my_rect.colliderect(other_rect)
 
+    def colliderect(self, other_rect):
+        my_rect = self.rect()
+        return my_rect.colliderect(other_rect)
