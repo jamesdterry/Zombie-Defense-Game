@@ -76,6 +76,7 @@ class zombie_scene(BaseZombieScene):
 
 
     def load(self):
+        self.s.screen.fill((0,0,0))
         self.font = pygame.font.SysFont(None, 48)
         self.zombies = []
         self.newKindZombies = []

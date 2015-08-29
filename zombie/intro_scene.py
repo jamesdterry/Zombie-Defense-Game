@@ -16,6 +16,7 @@ class intro_scene(BaseZombieScene):
     playerImage = None
 
     def load(self):
+        self.s.screen.fill((0,0,0))
         self.font = pygame.font.SysFont(None, 48)
         self.playerImage = pygame.image.load('art/SnowPea.gif')
 

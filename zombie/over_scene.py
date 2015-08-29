@@ -22,6 +22,7 @@ class over_scene(BaseZombieScene):
     death_by_zombie = False
 
     def load(self):
+        self.s.screen.fill((0,0,0))
         self.font = pygame.font.SysFont(None, 48)
         self.playerImage = pygame.image.load('art/SnowPea.gif')
 
