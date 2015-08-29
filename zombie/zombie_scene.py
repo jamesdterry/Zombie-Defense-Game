@@ -80,8 +80,8 @@ class zombie_scene(BaseZombieScene):
         self.zombies = []
         self.newKindZombies = []
         self.bullets = []
-        self.playerImage = pygame.image.load('SnowPea.gif')
-        self.playerRect = self.playerImage.get_rect()
+        self.playerImage = Sprite('SnowPea.gif')
+        self.playerRect = self.playerImage.rect()
         self.playerRect.topleft = (50, self.s.size[1] / 2)
         self.zombieImage = pygame.image.load('tree.png')
         self.newKindZombieImage = pygame.image.load('ConeheadZombieAttack.gif')
@@ -211,7 +211,7 @@ class zombie_scene(BaseZombieScene):
         self.s.screen.blit(self.game.rescaledBackground, (0, 0))
 
         # Draw the player's rectangle, rails
-        self.s.screen.blit(self.playerImage, self.playerRect)
+        self.playerImage.blit_at_rect(self.s, self.playerRect)
 
         # Draw each baddie
         for z in self.zombies:

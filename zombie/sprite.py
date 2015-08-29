@@ -23,6 +23,11 @@ class Sprite:
         self.y = y
         s.screen.blit(self.bitmap, (self.x, self.y))
 
+    def blit_at_rect(self, s, r):
+        self.x = r.topleft[0]
+        self.y = r.topleft[1]
+        s.screen.blit(self.bitmap, r)
+
     def width(self):
         return self.bitmap.get_width()
 
