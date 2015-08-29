@@ -80,12 +80,12 @@ class zombie_scene(BaseZombieScene):
         self.zombies = []
         self.newKindZombies = []
         self.bullets = []
-        self.playerImage = Sprite.fromfile('SnowPea.gif')
+        self.playerImage = Sprite.fromfile('art/SnowPea.gif')
         self.playerRect = self.playerImage.rect()
         self.playerRect.topleft = (50, self.s.size[1] / 2)
-        self.zombieImage = Sprite.fromfile('tree.png')
-        self.newKindZombieImage = Sprite.fromfile('ConeheadZombieAttack.gif')
-        self.bulletImage = Sprite.fromfile('SnowPeashooterBullet.gif')
+        self.zombieImage = Sprite.fromfile('art/tree.png')
+        self.newKindZombieImage = Sprite.fromfile('art/ConeheadZombieAttack.gif')
+        self.bulletImage = Sprite.fromfile('art/SnowPeashooterBullet.gif')
         self.bulletRect = self.bulletImage.rect()
         self.bulletAddCounter = 40
         self.death_by_zombie = False

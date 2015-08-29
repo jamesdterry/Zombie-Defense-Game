@@ -23,11 +23,11 @@ class over_scene(BaseZombieScene):
 
     def load(self):
         self.font = pygame.font.SysFont(None, 48)
-        self.playerImage = pygame.image.load('SnowPea.gif')
+        self.playerImage = pygame.image.load('art/SnowPea.gif')
 
         pygame.time.set_timer(ALLOW_EXIT, 1000 * 5)
 
-        gameOverSound = pygame.mixer.Sound('gameover.wav')
+        gameOverSound = pygame.mixer.Sound('art/gameover.wav')
         gameOverSound.play()
 
     def do_event(self, event):

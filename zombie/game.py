@@ -25,10 +25,10 @@ class Game:
         pygame.display.set_caption('Zombie Defense')
 
     def load(self):
-        pygame.mixer.music.load("grasswalk.mp3")
+        pygame.mixer.music.load("art/grasswalk.mp3")
         pygame.mixer.music.play(-1, 0.0)
 
-        backgroundImage = pygame.image.load('background.png')
+        backgroundImage = pygame.image.load('art/background.png')
         self.rescaledBackground = pygame.transform.scale(backgroundImage, (WINDOWWIDTH, WINDOWHEIGHT))
 
     def update(self):

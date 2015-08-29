@@ -17,7 +17,7 @@ class intro_scene(BaseZombieScene):
 
     def load(self):
         self.font = pygame.font.SysFont(None, 48)
-        self.playerImage = pygame.image.load('SnowPea.gif')
+        self.playerImage = pygame.image.load('art/SnowPea.gif')
 
         print self.s.size[0], self.s.size[1]
 
