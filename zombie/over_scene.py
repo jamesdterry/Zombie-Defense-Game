@@ -8,15 +8,13 @@ import pickle
 
 from screen import Screen
 from sprite import Sprite
-from scene import Scene
+from BaseZombieScene import BaseZombieScene
 
 import intro_scene
 
 ALLOW_EXIT = pygame.USEREVENT + 2
 
-TEXTCOLOR = (255, 255, 255)
-
-class over_scene(Scene):
+class over_scene(BaseZombieScene):
     font = None
     allow_exit = False
     playerImage = None
@@ -46,12 +44,6 @@ class over_scene(Scene):
 
     def update(self):
         pass
-
-    def drawText(self, text, font, x, y):
-        textobj = font.render(text, 1, TEXTCOLOR)
-        textrect = textobj.get_rect()
-        textrect.topleft = (x, y)
-        self.s.screen.blit(textobj, textrect)
 
     def draw(self):
         self.s.screen.blit(self.game.rescaledBackground, (0, 0))

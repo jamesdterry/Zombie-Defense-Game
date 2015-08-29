@@ -7,13 +7,11 @@ import random
 
 from screen import Screen
 from sprite import Sprite
-from scene import Scene
+from BaseZombieScene import BaseZombieScene
 
 import zombie_scene
 
-TEXTCOLOR = (255, 255, 255)
-
-class intro_scene(Scene):
+class intro_scene(BaseZombieScene):
     font = None
     playerImage = None
 
@@ -33,12 +31,6 @@ class intro_scene(Scene):
 
     def update(self):
         pass
-
-    def drawText(self, text, font, x, y):
-        textobj = font.render(text, 1, TEXTCOLOR)
-        textrect = textobj.get_rect()
-        textrect.topleft = (x, y)
-        self.s.screen.blit(textobj, textrect)
 
     def draw(self):
         self.s.screen.blit(self.game.rescaledBackground, (0, 0))

@@ -7,7 +7,6 @@ import random
 
 from screen import Screen
 from sprite import Sprite
-from scene import Scene
 
 from intro_scene import intro_scene
 

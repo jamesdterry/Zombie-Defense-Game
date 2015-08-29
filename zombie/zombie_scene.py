@@ -7,7 +7,7 @@ import random
 
 from screen import Screen
 from sprite import Sprite
-from scene import Scene
+from BaseZombieScene import BaseZombieScene
 
 import over_scene
 
@@ -23,10 +23,7 @@ PLAYERMOVERATE = 15
 BULLETSPEED = 10
 ADDNEWBULLETRATE = 15
 
-TEXTCOLOR = (255, 255, 255)
-RED = (255, 0, 0)
-
-class zombie_scene(Scene):
+class zombie_scene(BaseZombieScene):
     font = None
     game_over = False
 
@@ -209,12 +206,6 @@ class zombie_scene(Scene):
         if self.zombiesGottenPast >= MAXGOTTENPASS:
             self.game_over = True
 
-
-    def drawText(self, text, font, x, y):
-        textobj = font.render(text, 1, TEXTCOLOR)
-        textrect = textobj.get_rect()
-        textrect.topleft = (x, y)
-        self.s.screen.blit(textobj, textrect)
 
     def draw(self):
         self.s.screen.blit(self.game.rescaledBackground, (0, 0))
